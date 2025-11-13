@@ -6,4 +6,5 @@ We performed the same analysis for the files of all 300 chromosome pairs and the
 After combining all the distance matrices together, we got one distance matrix for all chromosomes 1 till Y.
 We next went for cluster cutting using the code half_dist_cluster_cutting.py, which used only half of this final distance matrix to form clusters at the the cut-point defined.
 # Cluster-wise sequence alignment
-
+flipped_align2.py is the code which can be used to align all the CGIs within the cluster based upon the best pearson score calculation at their best shifts. The algorithm to calculate best pearson correlation betwen all possible sequence pairs is same as we did in the clustering clogoritm before producing the distance matrices, but this time the scores were calculated for the sequences within the clusters and were recorded alongwith the best shifts and the flip information so that they can be aligned appropriately.
+flipped_align3.py code was used to align all the sequences within the clusters using the recorded information from flipped_align2.py. Multiple cases were considered while aligning the CGIs within each cluster, each of which is mentioned in the code.
