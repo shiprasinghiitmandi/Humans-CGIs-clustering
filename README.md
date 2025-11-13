@@ -43,4 +43,10 @@ Different alignment cases account for specific scenarios or exceptions encounter
 
 
 # Obtaining cluster-wise methylation patterns
-
+Step1: Filtering out only 100 methylation fraction containing sites from bedgraph file of each tissue using the 1_methylation_data_mining.py code and preparing a master file.
+Step2: Extracting each methylated chromosome individually from the master file using 2_extracting_methylated_chr.py code.
+Step3: Comparing the obtained methylated positions with CGI coordinates to obtain methylated positions only within CGIs using 3_CGI_extracted_methylated_pos.py code.
+Step4: Preparing a CGI docx with highlighted methylated positions for better visibility and further analyses using 4_highlighting_CGIdocx.py
+Step5: Renaming the headers of the highlighted docx so as to assign the same CGI sequence Id as we used during the clustering analyses using 5_renaming_methhltdocx.py code.
+Step6: Recording absolute chromosome-wise dy dx methylation levels using 6_methylated_dy_dx_table.py code.
+Step7: Mapping the methylated sites with absolute methylation levels recorded on different CGIs over the aligned CGIS of each cluster using the code methmap_clusters.py code.
