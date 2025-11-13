@@ -1,10 +1,45 @@
 # CpG clustering and methylation maps formation
-CpG island sequences from each chromosome were converted into string of dy-dx numerical values. All the possible permutations and combinations of these CGIs(CpG Islands) were compared among each other to find similiarity. Since we had only two variables(dy and dx) in our CGI sequence, we went for developing a linear correlation between every possible CGI pair by calculating Pearson correlation coefficient. We went for calculating corelation coefficients between all possible CGI sequence pairs for a pair of chromosomes individually, followed by their distance matrix formation, linkage matrix formation and hierarchical clustering. Since the task of processing files of all chromsomsomes altogether was highly memeory intensive, therefore we made all possible pairs of chromsomes and processed each pair to produce an individual distance matrix. This way a total of 300 chromosome pairs(emerging from 24 chromosomes) and 300 distance matrices were obtained which were next combined to make a single distance matrix for a single percentile of CGI sequences.
+# Introduction
+CpG island (CGI) sequences from each chromosome were converted into strings of numerical dy–dx values. All possible permutations and combinations of these CGI sequences were then compared to evaluate their similarity.
+Since each CGI was represented by only two variables (dy and dx), we computed Pearson correlation coefficients for every possible pair of CGI sequences, establishing a measure of linear correlation between them.
+
+Pairwise correlation matrices were generated for each chromosome pair, followed by distance matrix computation, linkage matrix generation, and hierarchical clustering.
+Because processing all chromosomes simultaneously was memory-intensive, we instead analyzed all possible chromosome pairs individually. This resulted in 300 chromosome pairs (from 24 chromosomes) and 300 corresponding distance matrices, which were subsequently merged to produce a single comprehensive distance matrix representing a given percentile of CGI sequences.
 # Pearson calculation, distance matrix formation and hierarchical clustering
-Flipped_comp_matrix.py code is used to process the file containing CGIs from any of the chromosome pair which first calculates pearson correlation berween different pairs of CGIs by shifting the shorter sequence over the longer one by 2 bp(as min dy is 2bp,CGI starts with dy and we want like elements from both the CGIs to be overlapping at a time). Next, the sequence is also flipped to calculate all the possible pearsons in flipped format, too(This is done to avoid any chances of missing a better alignment of two CGIs over each other). Once this process is done, the highest pearson calculated between the sequences is considered as best score/best pearson between the sequences and the position where it got recorded is the 'best shift' position. This is done for all possible sequence pairs. Next, distance is calculated for each sequence pair using best pearson score between all sequence pairs. distance matrix is generated and saved(will be used further) followed by linkage matrix formation which is next used to perform Agglomerative Hierarchical clustering where each instance is considered as a seperate cluster in starting and then getsmerged with the closest cluster to result into single cluster.
-We performed the same analysis for the files of all 300 chromosome pairs and then resulting distance matrices from them were compiled using 1tillY_distance_combined.py code.
-After combining all the distance matrices together, we got one distance matrix for all chromosomes 1 till Y.
-We next went for cluster cutting using the code half_dist_cluster_cutting.py, which used only half of this final distance matrix to form clusters at the the cut-point defined.
+Flipped_comp_matrix.py processes files containing CpG island (CGI) sequences from any given chromosome pair.
+For each CGI pair, the script calculates the Pearson correlation coefficient by shifting the shorter sequence over the longer one in 2 bp increments (since the minimum dy value is 2 bp and each CGI begins with dy, ensuring that equivalent elements from both CGIs overlap at a time).
+
+To ensure no optimal alignment is missed, the flipped orientation of each sequence is also evaluated, and Pearson correlations are computed for all possible flipped alignments as well.
+Among all correlations calculated, the highest Pearson coefficient is considered the best score (representing the strongest similarity between two CGIs), and the corresponding position is recorded as the best shift.
+
+This process is repeated for every possible CGI pair, after which:
+
+A distance matrix is generated based on the best Pearson scores.
+
+The linkage matrix is then derived from this distance matrix.
+
+Agglomerative hierarchical clustering is performed, where each CGI initially forms an individual cluster, and clusters iteratively merge with their nearest neighbors until a single cluster remains.
+
+The same workflow was applied to all 300 chromosome pairs, producing 300 distance matrices in total.
+These were then combined using 1tillY_distance_combined.py to generate a single unified distance matrix covering all chromosomes (1 through Y).
+
+Finally, cluster cutting was performed using half_dist_cluster_cutting.py, which used the upper half of this final matrix to form clusters at a defined cut threshold.
 # Cluster-wise sequence alignment
-flipped_align2.py is the code which can be used to align all the CGIs within the cluster based upon the best pearson score calculation at their best shifts. The algorithm to calculate best pearson correlation betwen all possible sequence pairs is same as we did in the clustering clogoritm before producing the distance matrices, but this time the scores were calculated for the sequences within the clusters and were recorded alongwith the best shifts and the flip information so that they can be aligned appropriately.
-flipped_align3.py code was used to align all the sequences within the clusters using the recorded information from flipped_align2.py. Multiple cases were considered while aligning the CGIs within each cluster, each of which is mentioned in the code.
+flipped_align2.py is used to align all CpG islands (CGIs) within each cluster based on their best Pearson correlation scores and corresponding best shift positions.
+The algorithm for computing the best Pearson correlation between all possible CGI sequence pairs follows the same approach as used previously during distance matrix generation.
+However, in this step, the correlations are calculated only among CGIs belonging to the same cluster.
+
+For each pair, the best Pearson score, shift position, and flip orientation (normal or reversed) are recorded to enable accurate alignment of sequences within the cluster.
+flipped_align3.py uses the recorded alignment data from flipped_align2.py to perform the actual sequence alignment for all CGIs within each cluster.
+Multiple alignment scenarios are handled in this script, each of which is explicitly addressed in the code.
+
+The CGI pairs are sorted from highest to lowest best Pearson scores, ensuring that the most similar pairs are aligned first.
+The best pair is aligned initially using the previously recorded flip orientation and shift information, followed by alignment of the remaining sequences according to their respective cases.
+
+Example:
+Different alignment cases account for specific scenarios or exceptions encountered during pairwise alignment (details available in the code comments).
+<img width="1118" height="511" alt="image" src="https://github.com/user-attachments/assets/4f2c26bf-878c-416c-8dab-5f6fc589a3e0" />
+
+
+# Obtaining cluster-wise methylation patterns
+
