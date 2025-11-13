@@ -38,7 +38,8 @@ The best pair is aligned initially using the previously recorded flip orientatio
 
 Example:
 Different alignment cases account for specific scenarios or exceptions encountered during pairwise alignment (details available in the code comments).
-<img width="1118" height="511" alt="image" src="https://github.com/user-attachments/assets/4f2c26bf-878c-416c-8dab-5f6fc589a3e0" />
+<img width="1118" height="511" alt="image" src="https://github.com/user-attachments/assets/d03df890-63e9-4326-a6ee-abadd85c735a" />
+
 
 
 # Obtaining cluster-wise methylation patterns
