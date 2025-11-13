@@ -14,11 +14,11 @@ Among all correlations calculated, the highest Pearson coefficient is considered
 
 This process is repeated for every possible CGI pair, after which:
 
-A distance matrix is generated based on the best Pearson scores.
+1) A distance matrix is generated based on the best Pearson scores.
 
-The linkage matrix is then derived from this distance matrix.
+2) The linkage matrix is then derived from this distance matrix.
 
-Agglomerative hierarchical clustering is performed, where each CGI initially forms an individual cluster, and clusters iteratively merge with their nearest neighbors until a single cluster remains.
+3) Agglomerative hierarchical clustering is performed, where each CGI initially forms an individual cluster, and clusters iteratively merge with their nearest neighbors until a single cluster remains.
 
 The same workflow was applied to all 300 chromosome pairs, producing 300 distance matrices in total.
 These were then combined using 1tillY_distance_combined.py to generate a single unified distance matrix covering all chromosomes (1 through Y).
