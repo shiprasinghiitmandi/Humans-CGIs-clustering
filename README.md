@@ -49,4 +49,9 @@ Step3: Comparing the obtained methylated positions with CGI coordinates to obtai
 Step4: Preparing a CGI docx with highlighted methylated positions for better visibility and further analyses using 4_highlighting_CGIdocx.py
 Step5: Renaming the headers of the highlighted docx so as to assign the same CGI sequence Id as we used during the clustering analyses using 5_renaming_methhltdocx.py code.
 Step6: Recording absolute chromosome-wise dy dx methylation levels using 6_methylated_dy_dx_table.py code.
-Step7: Mapping the methylated sites with absolute methylation levels recorded on different CGIs over the aligned CGIS of each cluster using the code methmap_clusters.py code.
+Step7: Recording the flipped or unflipped versions for every aligned sequences within each cluster using 11_alignedmeth.py which is further used during methylation mapping process.
+Step8: Mapping the methylated sites with absolute methylation levels recorded on different CGIs over the aligned CGIS of each cluster using the code 12_alignedmeth.py, considering the flipped status recorded earlier.
+Step9: Calculating column-wise methyaltion levels in each cluster using 13_alignedmethplot.py code.
+Step10: Calculation of cluster-wise methylation levels for each tissue using 14_methylationlevels_histogram.py code.
+Step11: Random methylation simulation code: 15_random methylation simulation.py
+
