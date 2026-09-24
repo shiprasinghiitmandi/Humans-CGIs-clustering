@@ -36,12 +36,6 @@ Multiple alignment scenarios are handled in this script, each of which is explic
 The CGI pairs are sorted from highest to lowest best Pearson scores, ensuring that the most similar pairs are aligned first.
 The best pair is aligned initially using the previously recorded flip orientation and shift information, followed by alignment of the remaining sequences according to their respective cases.
 
-Example:
-Different alignment cases account for specific scenarios or exceptions encountered during pairwise alignment (details available in the code comments).
-<img width="1118" height="511" alt="image" src="https://github.com/user-attachments/assets/d03df890-63e9-4326-a6ee-abadd85c735a" />
-
-
-
 # Obtaining cluster-wise methylation patterns
 Step1: Filtering out only 100 methylation fraction containing sites from bedgraph file of each tissue using the 1_methylation_data_mining.py code and preparing a master file.
 
@@ -55,7 +49,7 @@ Step5: Renaming the headers of the highlighted docx so as to assign the same CGI
 
 Step6: Recording absolute chromosome-wise dy dx methylation levels using 6_methylated_dy_dx_table.py code.
 
-Step7: Recording the flipped or unflipped versions for every aligned sequences within each cluster using 11_alignedmeth.py which is further used during methylation mapping 
+Step7: Recording the flipped or unflipped versions for every aligned sequences within each cluster using 11_alignedmeth.py which is further used during methylation mapping
 process.
 
 Step8: Mapping the methylated sites with absolute methylation levels recorded on different CGIs over the aligned CGIS of each cluster using the code 12_alignedmeth.py, considering the flipped status recorded earlier.
@@ -69,12 +63,13 @@ Step11: Random methylation simulation code: 15_random methylation simulation.py
 # ACCESSING CLUSTER-WISE CYTOSCAPE STRING AND PHYSICAL NETWORKS
 step1: download the ctyoscape software into your desktop
 
-step2: download the STRING_PHYSICAL_SESSIONS.cys file from this repository.
+step2: download the GO_STRING_physical.cys file from this repository.
 
-step3: open STRING_PHYSICAL_SESSIONS.cys. It should automatically open with the cytoscape software which you downloaded.
+step3: open GO_STRING_physical.cys, it should automatically open with the cytoscape software which you downloaded.
 
 step4: If the networks panel is not automatically opened, go to the left panel and open the networks panel.
 
-step5: Networks with the names cl1(physical), cl2(physical, etc refers to the clusterwise main physical networks, while the networks with the names such as cl1_0.9_STRING, cl2_0.9_STRING, etc are the cluster-wise main STRING networks. networks with names like random_cl1_string0.9 are random string networks for respective clusters, while networks with names like cl1_physical_random are cluster-wise random physical networks. These random networks were generated in order to assess the significance of the hub proteins obtain in the main(actual) networks of different clusters.
+step5: Networks with the names cl1_physical, cl2_physical, etc refers to the clusterwise main physical networks, while the networks with the names such as STRINGcl1,STRINGcl2, etc are the cluster-wise main STRING networks.
 
-step6: the node table for each network can also be accessed from the bottom right panel where several network centrality metrics for each protein are available and  can be analysed.
+step6: the node table for each network can also be accessed from the bottom right panel where several network centrality metrics for each protein are available and  can be analysed.
+ 
