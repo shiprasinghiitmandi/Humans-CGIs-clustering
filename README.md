@@ -72,4 +72,33 @@ step4: If the networks panel is not automatically opened, go to the left panel a
 step5: Networks with the names cl1_physical, cl2_physical, etc refers to the clusterwise main physical networks, while the networks with the names such as STRINGcl1,STRINGcl2, etc are the cluster-wise main STRING networks.
 
 step6: the node table for each network can also be accessed from the bottom right panel where several network centrality metrics for each protein are available and  can be analysed.
- 
+
+# PWM construction and scanning
+Two methods were used for PFM/PWM construction: 
+•	Pseudo-count method (BP)
+•	Floor threshold method (BF)
+Step1: For both the methods, the first step of effective size filtering from the main aligned matrices was common. Using Bonferroni p-values, the column ranges were fixed for each cluster and this effective size of PWM for each cluster was filtered out using code PseudocountA_PWMrevisedCBCa.py.
+Step2: Next code was used to construct PCM and PFM using the previously produced effctive size. PCM was produced using the same criteria for both themethods but formula for PFM was used differently for these two different methods. Therefore, pseudocount PFM generation will require the use of PseudocountB_PWM(PCM_PFM)revisedCBC.py while for Floor threshold FloorthresholdB_PWM(PCM_PFM).py code is to be used. the differences in the formula between both PWM construction have been given in the manuscript.
+Step3: Next, for PWM construction, PseudocountC_PWM_finalrevisedCBC.py was used for pseudocount PFMs, while for floor threshold FloorthresholdC_PWM_final.py was used.
+Step4: The PWMs produced were scanned over different set of CGIs as mentioned in the main text to obtain best scores with these PWMs. PseudocountD_PWM_scanning_sequencesRevisedCBC.py was used for pseudocount while FloorthresholdD_pwm_scanning_sequences.py was used for floor threshold generated PWMs.
+it is to be noted, that for trial purpose same kind of effective sizes file given as examples can be used to analyse both of the above methods scores.
+During PWM shuffling analyses also same scoring analyses(using both BP and BF method) codes were used only with shuffled pwms as we have given in examples.
+
+# Accessing cluster-wise cytoscape String and Physical networks 
+
+Step1: download the ctyoscape software into your desktop
+
+Step2: download the GO_STRING_physical.cys file from this repository.
+
+Step3: open GO_STRING_physical.cys, it should automatically open with the cytoscape software which you downloaded.
+
+Step4: If the networks panel is not automatically opened, go to the left panel and open the networks panel.
+
+Step5: Networks with the names cl1_physical, cl2_physical, etc refers to the clusterwise main physical networks, while the networks with the names such as STRINGcl1,STRINGcl2, etc are the cluster-wise main STRING networks.
+
+Step6: the node table for each network can also be accessed from the bottom right panel where several network centrality metrics for each protein are available and  can be analysed.
+
+# Accessing ClueGO analysis sessions
+In order to get access to GO enrichment session file(CBCrevisedClueGOanalyses.cys), install ClueGo app from the menu above in the cytoscape software. Once the app is installed, this session can be very easily accessed from the session named under GO_cl1, GO_cl2 and so on, where cl1 refers to cluster1, cl2 - cluster2 and so on. These GO sessions contain FDR tables which were used to evaluate top 10 enriched GO terms in each cluster.
+ 
+
