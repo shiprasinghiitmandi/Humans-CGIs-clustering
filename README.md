@@ -7,7 +7,7 @@ Pairwise correlation matrices were generated for each chromosome pair, followed 
 Because processing all chromosomes simultaneously was memory-intensive, we instead analyzed all possible chromosome pairs individually. This resulted in 300 chromosome pairs (from 24 chromosomes) and 300 corresponding distance matrices, which were subsequently merged to produce a single comprehensive distance matrix representing a given percentile of CGI sequences.
 # Pearson calculation, distance matrix formation and hierarchical clustering
 Flipped_comp_matrix.py processes files containing CpG island (CGI) sequences from any given chromosome pair.
-For each CGI pair, the script calculates the Pearson correlation coefficient by shifting the shorter sequence over the longer one in 2 bp increments (since the minimum dy value is 2 bp and each CGI begins with dy, ensuring that equivalent elements from both CGIs overlap at a time).
+For each CGI pair, the script calculates the Pearson correlation coefficient by shifting the shorter sequence over the longer one in 2 bp increments (since the minimum dy value is 2 bp and each CGI begins with dy, ensuring that equivalent elements from both CGIs overlap at a time). See 'hierarchical_clustering_readme.md' file.
 
 To ensure no optimal alignment is missed, the flipped orientation of each sequence is also evaluated, and Pearson correlations are computed for all possible flipped alignments as well.
 Among all correlations calculated, the highest Pearson coefficient is considered the best score (representing the strongest similarity between two CGIs), and the corresponding position is recorded as the best shift.
@@ -37,7 +37,7 @@ The CGI pairs are sorted from highest to lowest best Pearson scores, ensuring th
 The best pair is aligned initially using the previously recorded flip orientation and shift information, followed by alignment of the remaining sequences according to their respective cases.
 
 # Obtaining cluster-wise methylation patterns
-Step1: Filtering out only 100 methylation fraction containing sites from bedgraph file of each tissue using the 1_methylation_data_mining.py code and preparing a master file.
+Step1: Filtering out only 100 methylation fraction containing sites from bedgraph file of each tissue using the 1_methylation_data_mining.py code and preparing a master file. See 'methylation_map_readme.md' file.
 
 Step2: Extracting each methylated chromosome individually from the master file using 2_extracting_methylated_chr.py code.
 
@@ -78,7 +78,7 @@ Two methods were used for PFM/PWM construction:
 •	Pseudo-count method (BP)
 •	Floor threshold method (BF)
 Step1: For both the methods, the first step of effective size filtering from the main aligned matrices was common. Using Bonferroni p-values, the column ranges were fixed for each cluster and this effective size of PWM for each cluster was filtered out using code PseudocountA_PWMrevisedCBCa.py.
-Step2: Next code was used to construct PCM and PFM using the previously produced effctive size. PCM was produced using the same criteria for both themethods but formula for PFM was used differently for these two different methods. Therefore, pseudocount PFM generation will require the use of PseudocountB_PWM(PCM_PFM)revisedCBC.py while for Floor threshold FloorthresholdB_PWM(PCM_PFM).py code is to be used. the differences in the formula between both PWM construction have been given in the manuscript.
+Step2: Next code was used to construct PCM and PFM using the previously produced effctive size. PCM was produced using the same criteria for both themethods but formula for PFM was used differently for these two different methods. Therefore, pseudocount PFM generation will require the use of PseudocountB_PWM(PCM_PFM)revisedCBC.py while for Floor threshold FloorthresholdB_PWM(PCM_PFM).py code is to be used. the differences in the formula between both PWM construction have been given in the manuscript. See 'pseudocount_pwm_readme.md' file.
 Step3: Next, for PWM construction, PseudocountC_PWM_finalrevisedCBC.py was used for pseudocount PFMs, while for floor threshold FloorthresholdC_PWM_final.py was used.
 Step4: The PWMs produced were scanned over different set of CGIs as mentioned in the main text to obtain best scores with these PWMs. PseudocountD_PWM_scanning_sequencesRevisedCBC.py was used for pseudocount while FloorthresholdD_pwm_scanning_sequences.py was used for floor threshold generated PWMs.
 it is to be noted, that for trial purpose same kind of effective sizes file given as examples can be used to analyse both of the above methods scores.
