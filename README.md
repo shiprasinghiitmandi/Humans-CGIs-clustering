@@ -60,18 +60,6 @@ Step10: Calculation of cluster-wise methylation levels for each tissue using 14_
 
 Step11: Random methylation simulation code: 15_random methylation simulation.py
 
-# ACCESSING CLUSTER-WISE CYTOSCAPE STRING AND PHYSICAL NETWORKS
-step1: download the ctyoscape software into your desktop
-
-step2: download the GO_STRING_physical.cys file from this repository.
-
-step3: open GO_STRING_physical.cys, it should automatically open with the cytoscape software which you downloaded.
-
-step4: If the networks panel is not automatically opened, go to the left panel and open the networks panel.
-
-step5: Networks with the names cl1_physical, cl2_physical, etc refers to the clusterwise main physical networks, while the networks with the names such as STRINGcl1,STRINGcl2, etc are the cluster-wise main STRING networks.
-
-step6: the node table for each network can also be accessed from the bottom right panel where several network centrality metrics for each protein are available and  can be analysed.
 
 # PWM construction and scanning
 Two methods were used for PFM/PWM construction: 
