@@ -75,13 +75,19 @@ step6: the node table for each network can also be accessed from the bottom righ
 
 # PWM construction and scanning
 Two methods were used for PFM/PWM construction: 
+
 •	Pseudo-count method (BP)
 •	Floor threshold method (BF)
-Step1: For both the methods, the first step of effective size filtering from the main aligned matrices was common. Using Bonferroni p-values, the column ranges were fixed for each cluster and this effective size of PWM for each cluster was filtered out using code PseudocountA_PWMrevisedCBCa.py.
-Step2: Next code was used to construct PCM and PFM using the previously produced effctive size. PCM was produced using the same criteria for both themethods but formula for PFM was used differently for these two different methods. Therefore, pseudocount PFM generation will require the use of PseudocountB_PWM(PCM_PFM)revisedCBC.py while for Floor threshold FloorthresholdB_PWM(PCM_PFM).py code is to be used. the differences in the formula between both PWM construction have been given in the manuscript. See 'pseudocount_pwm_readme.md' file.
+
+Step1: For both the methods, the first step of effective size filtering from the main aligned matrices was common. Using Bonferroni p-values, the column ranges were fixed for each cluster and this effective size of PWM for each cluster was filtered out using code PseudocountA_PWMrevisedCBCa.py. See 'pseudocount_pwm_readme.md' file.
+
+Step2: Next code was used to construct PCM and PFM using the previously produced effctive size. PCM was produced using the same criteria for both themethods but formula for PFM was used differently for these two different methods. Therefore, pseudocount PFM generation will require the use of PseudocountB_PWM(PCM_PFM)revisedCBC.py while for Floor threshold FloorthresholdB_PWM(PCM_PFM).py code is to be used. the differences in the formula between both PWM construction have been given in the manuscript.
+
 Step3: Next, for PWM construction, PseudocountC_PWM_finalrevisedCBC.py was used for pseudocount PFMs, while for floor threshold FloorthresholdC_PWM_final.py was used.
-Step4: The PWMs produced were scanned over different set of CGIs as mentioned in the main text to obtain best scores with these PWMs. PseudocountD_PWM_scanning_sequencesRevisedCBC.py was used for pseudocount while FloorthresholdD_pwm_scanning_sequences.py was used for floor threshold generated PWMs.
-it is to be noted, that for trial purpose same kind of effective sizes file given as examples can be used to analyse both of the above methods scores.
+
+Step4: The PWMs produced were scanned over different set of CGIs as mentioned in the main text to obtain best scores with these PWMs. PseudocountD_PWM_scanning_sequencesRevisedCBC.py was used for pseudocount while FloorthresholdD_pwm_scanning_sequences.py was used for floor threshold generated PWMs. 
+
+It is to be noted, that for trial purpose same kind of effective sizes file given as examples can be used to analyse both of the above methods scores.
 During PWM shuffling analyses also same scoring analyses(using both BP and BF method) codes were used only with shuffled pwms as we have given in examples.
 
 # Accessing cluster-wise cytoscape String and Physical networks 
