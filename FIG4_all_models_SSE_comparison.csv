@@ -1,0 +1,76 @@
+Tissue,Cluster,Model,Pi,Factor,Pi_c,SSE
+Healthy Lung,1,Random,0.05,,,2602.3203
+Healthy Lung,1,Negative collaborative,0.05,0.98,0.049,2587.076896
+Healthy Lung,1,Positive collaborative,0.05,1.26,0.063,2575.586737
+Healthy Lung,2,Random,0.05,,,20731.8183
+Healthy Lung,2,Negative collaborative,0.05,0.99,0.0495,20606.50936
+Healthy Lung,2,Positive collaborative,0.05,1.16,0.058,20579.09994
+Healthy Lung,3,Random,0.06,,,29020.69
+Healthy Lung,3,Negative collaborative,0.06,0.99,0.0594,28756.76393
+Healthy Lung,3,Positive collaborative,0.06,1.12,0.0672,28725.55313
+Healthy Lung,4,Random,0.05,,,17525.4495
+Healthy Lung,4,Negative collaborative,0.05,0.99,0.0495,17445.62225
+Healthy Lung,4,Positive collaborative,0.05,1.3,0.065,17381.79484
+Healthy Lung,5,Random,0.05,,,19875.0442
+Healthy Lung,5,Negative collaborative,0.05,0.98,0.049,19782.76125
+Healthy Lung,5,Positive collaborative,0.05,1.36,0.068,19715.85164
+Cancerous Lung,1,Random,0.04,,,2106.4956
+Cancerous Lung,1,Negative collaborative,0.04,0.98,0.0392,2095.824687
+Cancerous Lung,1,Positive collaborative,0.04,1.26,0.0504,2088.509229
+Cancerous Lung,2,Random,0.04,,,16746.535
+Cancerous Lung,2,Negative collaborative,0.04,0.99,0.0396,16688.14975
+Cancerous Lung,2,Positive collaborative,0.04,1.16,0.0464,16674.28237
+Cancerous Lung,3,Random,0.04,,,22906.9377
+Cancerous Lung,3,Negative collaborative,0.04,0.97,0.0388,22848.25201
+Cancerous Lung,3,Positive collaborative,0.04,1.24,0.0496,22795.8669
+Cancerous Lung,4,Random,0.04,,,14083.318
+Cancerous Lung,4,Negative collaborative,0.04,0.99,0.0396,14048.73165
+Cancerous Lung,4,Positive collaborative,0.04,1.28,0.0512,14027.77606
+Cancerous Lung,5,Random,0.04,,,15632.6716
+Cancerous Lung,5,Negative collaborative,0.04,0.95,0.038,15585.97071
+Cancerous Lung,5,Positive collaborative,0.04,1.23,0.0492,15561.43296
+Healthy Liver,1,Random,0.05,,,2712.8575
+Healthy Liver,1,Negative collaborative,0.05,0.99,0.0495,2699.34212
+Healthy Liver,1,Positive collaborative,0.05,1.43,0.0715,2686.441932
+Healthy Liver,2,Random,0.05,,,22061.4202
+Healthy Liver,2,Negative collaborative,0.05,0.99,0.0495,21954.6825
+Healthy Liver,2,Positive collaborative,0.05,1.23,0.0615,21899.37203
+Healthy Liver,3,Random,0.06,,,30269.4641
+Healthy Liver,3,Negative collaborative,0.06,0.99,0.0594,30020.77941
+Healthy Liver,3,Positive collaborative,0.06,1.12,0.0672,29976.45183
+Healthy Liver,4,Random,0.06,,,18576.238
+Healthy Liver,4,Negative collaborative,0.06,0.99,0.0594,18436.19026
+Healthy Liver,4,Positive collaborative,0.06,1.11,0.0666,18411.48827
+Healthy Liver,5,Random,0.06,,,20875.4493
+Healthy Liver,5,Negative collaborative,0.06,0.98,0.0588,20706.1804
+Healthy Liver,5,Positive collaborative,0.06,1.11,0.0666,20682.28884
+Cancerous Liver,1,Random,0.05,,,2637.3271
+Cancerous Liver,1,Negative collaborative,0.05,0.99,0.0495,2629.408487
+Cancerous Liver,1,Positive collaborative,0.05,1.4,0.07,2616.539258
+Cancerous Liver,2,Random,0.05,,,21269.4516
+Cancerous Liver,2,Negative collaborative,0.05,0.98,0.049,21209.36748
+Cancerous Liver,2,Positive collaborative,0.05,1.25,0.0625,21161.16602
+Cancerous Liver,3,Random,0.05,,,28751.0216
+Cancerous Liver,3,Negative collaborative,0.05,0.99,0.0495,28678.59587
+Cancerous Liver,3,Positive collaborative,0.05,1.34,0.067,28557.25728
+Cancerous Liver,4,Random,0.05,,,17442.2792
+Cancerous Liver,4,Negative collaborative,0.05,0.96,0.048,17398.16237
+Cancerous Liver,4,Positive collaborative,0.05,1.28,0.064,17344.2958
+Cancerous Liver,5,Random,0.05,,,19395.5129
+Cancerous Liver,5,Negative collaborative,0.05,0.98,0.049,19328.32715
+Cancerous Liver,5,Positive collaborative,0.05,1.23,0.0615,19270.49156
+Healthy Brain,1,Random,0.09,,,4144.1774
+Healthy Brain,1,Negative collaborative,0.09,0.98,0.0882,4095.309442
+Healthy Brain,1,Positive collaborative,0.09,1.19,0.1071,4072.213718
+Healthy Brain,2,Random,0.08,,,32922.0041
+Healthy Brain,2,Negative collaborative,0.08,0.99,0.0792,32583.73735
+Healthy Brain,2,Positive collaborative,0.08,1.23,0.0984,32469.11377
+Healthy Brain,3,Random,0.09,,,44853.2573
+Healthy Brain,3,Negative collaborative,0.09,0.99,0.0891,44305.94303
+Healthy Brain,3,Positive collaborative,0.09,1.25,0.1125,44130.77976
+Healthy Brain,4,Random,0.08,,,27512.6343
+Healthy Brain,4,Negative collaborative,0.08,0.99,0.0792,27296.64213
+Healthy Brain,4,Positive collaborative,0.08,1.3,0.104,27128.48353
+Healthy Brain,5,Random,0.08,,,30654.7283
+Healthy Brain,5,Negative collaborative,0.08,0.97,0.0776,30372.70892
+Healthy Brain,5,Positive collaborative,0.08,1.28,0.1024,30176.7303
